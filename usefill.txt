@@ -1,0 +1,8 @@
+#counting lines. 
+
+free -m | grep Mem | awk '{sum=$2}; END {print sum}' 
+ps -C chrome -o %mem | awk '{sum=sum+$1}; END {print sum}'
+
+#cutting file spaces whith new lines.
+
+cut -d ' ' --output-delimiter=$'\n' -f 1- example
