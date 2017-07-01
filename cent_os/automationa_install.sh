@@ -8,6 +8,6 @@ yum -y upgrade
 
 # Installing packages 
 
-cat packages.txt | xarg yum install 
+cat packages.txt | xargs yum install 
 
 
