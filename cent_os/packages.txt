@@ -53,4 +53,3 @@ yum-plugin-replace
 perl-LWP-Protocol-http10
 perl-LWP-Protocol-https
 unzip
-http://mirror.itdc.ge/epel/7/`arch`/e/epel-release-7-5.noarch.rpm
