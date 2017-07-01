@@ -14,7 +14,7 @@ yum -y install http://mirror.itdc.ge/epel/7/`arch`/e/epel-release-7-5.noarch.rpm
 
 
 # Installing packages 
-
+cd $CURRENT_DIR 
 cat packages.txt | xargs yum -y install 
 
 
