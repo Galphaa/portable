@@ -15,7 +15,7 @@ HDSentinel -r
 
 sed -i -- "s/A/B/g" FILE NAME 
 
-# If we are using / for string
+# If we are using "/" for string
 
 sed -i -- "s|/file/path|/other/file/path|g" FILE NAME
 
