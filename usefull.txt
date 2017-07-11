@@ -5,9 +5,12 @@ ps -C chrome -o %mem | awk '{sum=sum+$1}; END {print sum}'
 
 ##cutting file spaces with new lines.
 
-cut -d ' ' --output-delimiter=$'\n' -f 1- example
+cut -d ' ' --output-delimiter=$'\n' -f 1- FILE NAME
 
 ##Check HDD/SSD  health by program HDSentinel (It must be installed)
 
 HDSentinel -r
 
+## Changing A(word) to B(word) in entire file
+
+sed -i -- "s/A/B/g" FILE NAME 
