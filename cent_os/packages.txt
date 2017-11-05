@@ -53,3 +53,5 @@ yum-plugin-replace
 perl-LWP-Protocol-http10
 perl-LWP-Protocol-https
 unzip
+bash-completion 
+
