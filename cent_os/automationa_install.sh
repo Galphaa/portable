@@ -16,7 +16,9 @@ yum -y install http://mirror.itdc.ge/epel/7/`arch`/e/epel-release-7-5.noarch.rpm
 
 
 # Installing packages 
-cat packages.txt | xargs yum -y install 
+cat packages.txt | xargs yum -y install 2> .error.log
 
-
+# Update
+yum -y update
+yum -y upgrade
 
