@@ -19,3 +19,6 @@ sed -i -- "s/A/B/g" FILE NAME
 
 sed -i -- "s|/file/path|/other/file/path|g" FILE NAME
 
+## Outputing only error during file instalation
+yum -y -e 1 install *PACKAGE
+apt-get -y -qq  install *PACKAGE
