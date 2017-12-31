@@ -1,0 +1,11 @@
+export FOO=100
+
+
+test=$(python3.6 - <<EOL
+import os 
+FOO=69
+print("before FOO:", FOO, "FOO this is its value = ", os.environ['FOO'])
+EOL
+)
+
+echo $test
