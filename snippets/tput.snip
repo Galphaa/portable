@@ -13,3 +13,10 @@ NORMAL=$(tput sgr0)
 BLINK=$(tput blink)
 REVERSE=$(tput smso)
 UNDERLINE="$(tput smul)"
+
+
+## Separate on hole colum in terminal space with " = "
+printf "%*s" $(tput cols) | tr " " "="
+## Placeing text in center 
+TITLE="something"
+printf "%*s\n" $(((${#TITLE}+$COLUMNS)/2)) "$TITLE"
