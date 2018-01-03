@@ -40,3 +40,9 @@ top -n 1 -b | grep "load average:" | awk '{print $10 $11 $12}'
 
 ## Searching using GREP
 grep -Rinw ~/bin/ -e 'check_root' -e 'netstat'
+
+## Some good stuff
+wget -r -l 5 -k -w 1 --random-wait URL > /dev/null 2>&1 &
+wget --mirror -p --html-extension --convert-links -e robots=off -P .  URL
+
+
