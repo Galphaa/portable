@@ -45,4 +45,6 @@ grep -Rinw ~/bin/ -e 'check_root' -e 'netstat'
 wget -r -l 5 -k -w 1 --random-wait URL > /dev/null 2>&1 &
 wget --mirror -p --html-extension --convert-links -e robots=off -P .  URL
 
+## Edit all files with some character in current directory 
+rename "before" "after" *
 
