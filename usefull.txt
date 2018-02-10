@@ -48,3 +48,5 @@ wget --mirror -p --html-extension --convert-links -e robots=off -P .  URL
 ## Edit all files with some character in current directory 
 rename "before" "after" *
 
+## Windows using HDD shout down
+shutdown -s -t 0
