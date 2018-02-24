@@ -34,6 +34,11 @@ curl -s -w 'Testing Website Response Time for :%{url_effective}\n\nLookup Time:\
 ## Connecting to remote, executing command and redirecting output to my local text file
 ssh remote_host "ls" > .\file_on_local_host.txt
 
+sudo -H ssh $server 'bash -s' <<"EOF"
+service httpd restart
+EOF
+
+
 ## Parsing top output to get information about CPU load last 1,5,15 minut
 top -n 1 -b | grep "load average:" | awk '{print $10 $11 $12}'
 
