@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/env bash
 
-function update_upgrade{
-yum -y update  > /dev/null 2>&1
-yum -y upgrade > /dev/null 2>&1
+function update_upgrade {
+yum -y -e1 update  
+yum -y -e1 upgrade 
 }
 
 
@@ -15,10 +15,10 @@ update_upgraderade
 # Cleaning  Centos_repo list
 cd $CURRENT_DIR
 cat CentOS-Base.repo > /etc/yum.repos.d/CentOS-Base.repo
-yum -y update
+update_upgrade
 
 # Adding extended package repo
-yum -y install http://mirror.itdc.ge/epel/7/`arch`/e/epel-release-7-5.noarch.rpm
+yum -y -e1 install http://mirror.itdc.ge/epel/7/`arch`/e/epel-release-7-5.noarch.rpm
 
 
 # Installing packages
