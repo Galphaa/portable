@@ -58,3 +58,6 @@ shutdown -s -t 0
 
 ## Sorting IP in rigtht order in every octets.
 cat <(awk '{if($2~/[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/){print $0}}' test.txt | sort -k 2) <(awk '{if($2~/^[0-9]*\.[0-9]*\.[0-9]*$/){print $0}}' test.txt | sort -k 2) FILE
+
+## Searching sub domaines using Google dorking
+site:galpha.me -site:www.galpha.me
