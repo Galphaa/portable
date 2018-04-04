@@ -14,7 +14,7 @@ sed -i -- "s/A/B/g" FILE NAME
 # If we are using "/" for string
 sed -i -- "s|/file/path|/other/file/path|g" FILE NAME
 
-## Outputing only error during file instalation
+## Outputing only error during file instalation may be, need cirectuib.
 yum -y -e 1 install *PACKAGE
 apt-get -y -qq  install *PACKAGE
 
@@ -55,3 +55,6 @@ rename "before" "after" *
 
 ## Windows using HDD shout down
 shutdown -s -t 0
+
+## Sorting IP in rigtht order in every octets.
+cat <(awk '{if($2~/[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/){print $0}}' test.txt | sort -k 2) <(awk '{if($2~/^[0-9]*\.[0-9]*\.[0-9]*$/){print $0}}' test.txt | sort -k 2) FILE
