@@ -12,6 +12,9 @@ lsof
 OpenIPMI
 ipmitool
 
+https://centos7.iuscommunity.org/ius-release.rpm 
+epel-release 
+
 webmin
 nrpe
 nagios-plugins-all
