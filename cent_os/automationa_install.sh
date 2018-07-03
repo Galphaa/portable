@@ -17,9 +17,6 @@ cd $CURRENT_DIR
 cat CentOS-Base.repo > /etc/yum.repos.d/CentOS-Base.repo
 update_upgrade
 
-# Adding extended package repo
-yum -y -e1 install http://mirror.itdc.ge/epel/7/`arch`/e/epel-release-7-5.noarch.rpm
-
 
 # Installing packages
 cat packages.txt | xargs yum -y -e1 install
