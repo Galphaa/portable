@@ -64,3 +64,6 @@ site:galpha.me -site:www.galpha.me
 
 ## Random password generator  
 < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c12 | xargs echo 
+
+## SSH Tunneling browser
+ssh -C2qTnN -D 8080 username@remote_machine.com
