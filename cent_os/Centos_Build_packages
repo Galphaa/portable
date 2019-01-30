@@ -1,0 +1,8 @@
+sudo yum -y install cmake bison flex pcre-devel libev-devel protobuf-c-devel protobuf-c-compiler make rpm-build doxygen swig
+sudo yum -y install autoconf automake libtool gtest-devel
+sudo yum -y install openssl-develsudo yum -y install log4cplus-devel
+sudo yum -y install ccache
+sudo yum -y install boost-devel
+sudo yum -y install centos-release-scl
+yum -y install devtoolset-8-gcc*
+scl enable devtoolset-8 bash
