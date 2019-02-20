@@ -59,3 +59,4 @@ perl-LWP-Protocol-https
 unzip
 bash-completion 
 bash-completion-extras
+tmux
