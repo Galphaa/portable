@@ -6,7 +6,7 @@ Docker get images
 -----------------
 docker images
 docker search []
-docker pull [imagename:tag]
+docker pull [imageNAME:tag]
 
 List containers 
 --------------
@@ -15,16 +15,16 @@ docker ps -a
 
 run/exec/inspect
 ----------------
-docker run -it [imagename:tag] /bin/bash
-docker run --name [name] -it [imagename:tag] /bin/bash
-docker inspect [containername]
+  docker run -it [imageNAME:tag] /bin/bash
+docker run --name [name] -it [imageNAME:tag] /bin/bash
+docker inspect [containerNAME]
 Ctrl-pq - exit 
-docker exec -it [containername] /bin/bash
+docker exec -it [containerNAME] /bin/bash
 
 Copy files 
 ----------
-docker cp foo.txt [containername]:/foo.txt
-docker cp [containername]:/foo.txt foo.txt
+docker cp foo.txt [containerNAME]:/foo.txt
+docker cp [containerNAME]:/foo.txt foo.txt
 
 Remove container 
 ----------------
@@ -36,8 +36,12 @@ Stop and remove all containers
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
-Sanpshot command fomr container
+Sanpshot command for container
 ------------------------------
-docker commit [containername] [desiredname:tag]
+docker commit -m="Here is the message or description" -a="Author of container" containerID imageNAME 
+docker save -o saveNAME imageNAME
+docker commit [containerNAME] [desiredNAME:tag]
+docker load -i imageNAME 
+docker run -it [imageNAME:tag] /bin/bash
 
 
