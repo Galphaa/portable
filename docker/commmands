@@ -15,7 +15,7 @@ docker ps -a
 
 run/exec/inspect
 ----------------
-  docker run -it [imageNAME:tag] /bin/bash
+docker run -it [imageNAME:tag] /bin/bash
 docker run --name [name] -it [imageNAME:tag] /bin/bash
 docker inspect [containerNAME]
 Ctrl-pq - exit 
