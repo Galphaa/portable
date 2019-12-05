@@ -44,4 +44,13 @@ docker commit [containerNAME] [desiredNAME:tag]
 docker load -i imageNAME 
 docker run -it [imageNAME:tag] /bin/bash
 
+Docker monitoring
+-----------------
+docker info    #general information:  number of containers disk space...
+docker version    #give information about underling  components: go version git version...
+docker inspect [containerNAME]
+docker ps -a -q --filter "status=exited"    #shows all exeted containersID
+docker top [conteinerID]    #shows given conteinersID top  
+docker diff [conteinerID]    #shows changes sinces docker conteiners from image 
+docker event    #shows live logging interaction what is happaning under docker hood similar to messages log file in linux 
 
