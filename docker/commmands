@@ -54,3 +54,9 @@ docker top [conteinerID]    #shows given conteinersID top
 docker diff [conteinerID]    #shows changes sinces docker conteiners from image 
 docker event    #shows live logging interaction what is happaning under docker hood similar to messages log file in linux 
 
+Mounting Volumes
+----------------
+docker run -v /host/directory:/container/directory -other -options imageID command_to_run #mounting directory from host to conainter.
+docker run -v /host/directory:/container/directory:z --name=mydata -it imageID bash #making mounted volume sharable amond other conteiners, small z flag defines it and name of conteriner is mydata.
+docker run --volumes-from=mydata conteinerID touch /data/x #mounted volume from different conteiner using conterinerID and creating x file in mounted directory and is accasable in both conteiners.
+
