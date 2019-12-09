@@ -57,6 +57,9 @@ docker event    #shows live logging interaction what is happaning under docker h
 Mounting Volumes
 ----------------
 docker run -v /host/directory:/container/directory -other -options imageID command_to_run #mounting directory from host to conainter.
+docker run -v /:/host imageID bash #by default the docker permitions are restrected and are not allowed to change host root folders, when creating file in /host/x it will rite write premission denied.
+docker run -v /:/host --priviledged imageID bash #by default the docker permitions are unlocked and are  allowed to change host root folders, when creating file in /host/x it will rite write there this is allowed by --priviledged.
 docker run -v /host/directory:/container/directory:z --name=mydata -it imageID bash #making mounted volume sharable amond other conteiners, small z flag defines it and name of conteriner is mydata.
 docker run --volumes-from=mydata conteinerID touch /data/x #mounted volume from different conteiner using conterinerID and creating x file in mounted directory and is accasable in both conteiners.
+docker run -v /host/directory:/container/directory:z --name=mydata -it imageID bash #making mounted volume sharable amond other conteiners, small z flag defines it and name of conteriner is mydata.
 
