@@ -8,10 +8,12 @@ docker images
 docker search []
 docker pull [imageNAME:tag]
 
+
 List containers 
 ---------------
 docker ps
 docker ps -a
+
 
 run/exec/inspect
 ----------------
@@ -21,20 +23,24 @@ docker inspect [containerNAME]
 Ctrl-pq - exit 
 docker exec -it [containerNAME] /bin/bash
 
+
 Copy files 
 ----------
 docker cp foo.txt [containerNAME]:/foo.txt
 docker cp [containerNAME]:/foo.txt foo.txt
+
 
 Remove container 
 ----------------
 docker rm [container]
 docker rmi [image]
 
+
 Stop and remove all containers
 ------------------------------
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+
 
 Sanpshot command for container
 ------------------------------
@@ -43,6 +49,7 @@ docker save -o saveNAME imageNAME
 docker commit [containerNAME] [desiredNAME:tag]
 docker load -i imageNAME 
 docker run -it [imageNAME:tag] /bin/bash
+
 
 Docker monitoring
 -----------------
@@ -53,6 +60,7 @@ docker ps -a -q --filter "status=exited"    #shows all exeted containersID
 docker top [conteinerID]    #shows given conteinersID top  
 docker diff [conteinerID]    #shows changes sinces docker conteiners from image 
 docker event    #shows live logging interaction what is happaning under docker hood similar to messages log file in linux 
+
 
 Mounting Volumes
 ----------------
