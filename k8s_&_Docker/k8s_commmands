@@ -1,0 +1,21 @@
+***********************************
+k8s Quick Start/Useful Commands
+***********************************
+
+kubectl creat -f [name.yml] #Creates pod with give parameters from file [name.yml]
+kubectl create ns [namespaceNAME] #Creates namespaces
+kubectl get pods  #Gives pods brife information
+kubectl get pods [podNAME] #Gives pods with name brife information about it
+kubectl get ns #Shows all namespaces 
+kubectl get ns [namespaceNAME] #Gives brife info of namespace [namespaceNAME]
+kubectl get ns [namespaceNAME] -o yaml #Gives all properties of namespace [namespaceNAME] in yaml format
+kubectl get all #Prints out all information 
+kubectl describe {deployment|rs|pods} #Gives information about all pods,rs and deployment on host
+kubectl describe [podNAME] #Gives information about [podNAME] pod on host
+kubectl describe deployment [deploymentNAME] #Gives information about [deploymentNAME] deployment	 on host
+kubectl delete pod [podNAME] #Deletes type=pod and [podNAME] 
+kubectl run [NAME_DEPLOYMENT] --image=[imageNAME] #Creates deployment from nginx image with name of [s
+kubectl get rs [replicasetNAME] -o yaml #This gives full information about replica 
+kubectl logs [podNAME] #Gives log information about [podNAME] pod on host
+kubectl scale --replicas=3 deployment [deploymentNAME] #This increas number of pods in deployment and replicasets 
+
