@@ -70,3 +70,4 @@ ssh -C2qTnN -D 8080 username@remote_machine.com
 
 ## For Loop ssh into 3 different nodes
 for i in $(seq 3); do ssh node0$i systemctl status ntp; done
+for i in $(node01 node02 node03); do ssh $i  sudo date; done 
