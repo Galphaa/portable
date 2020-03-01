@@ -72,5 +72,13 @@ ssh -C2qTnN -D 8080 username@remote_machine.com
 for i in $(seq 3); do ssh node0$i systemctl status ntp; done
 for i in $(node01 node02 node03); do ssh $i  sudo date; done 
 
-## Save in vim without exiting 
+## Save in VIM without exiting 
 :w !sudo tee %
+
+## Record and Repeat multipe times in VIM 
+q reqrind status will be promped at left bottom corner meaning it has started 
+sequenc of commands
+qq for stoping reqording
+@q repeats once 
+@@ repeats twice
+59@ repeats 59 times
