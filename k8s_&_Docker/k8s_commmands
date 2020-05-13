@@ -18,5 +18,6 @@ kubectl run [NAME_DEPLOYMENT] --image=[imageNAME] #Creates deployment from nginx
 kubectl get rs [replicasetNAME] -o yaml #This gives full information about replica 
 kubectl logs [podNAME] #Gives log information about [podNAME] pod on host
 kubectl scale --replicas=3 deployment [deploymentNAME] #This increas number of pods in deployment and replicasets 
-kubectl create deployment --dry-run --image=[imageNAME]  --output=yaml  [deploymentNAME] > [NAME.yml] #Creates deployment yaml file to work with using image [imageNAME] and setting deployment name [deploymentNAME] 
+kubectl create deployment --dry-run --image=[imageNAME] --output=yaml [deploymentNAME] > [NAME.yml] #Creates deployment yaml file to work with using image [imageNAME] and setting deployment name [deploymentNAME] 
 kubectl get deployment [deploymentNAME]  -o yaml #Gives output of [deploymentNAME] configuration in yaml format
+kubectl edit deployment [deploymentNAME] #Editing deployment yaml format, after quiting editor the changes are executing
