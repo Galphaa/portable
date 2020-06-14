@@ -25,3 +25,4 @@ kubectl get deployment --show-labels #Outputs all deployments with there lableso
 kubectl label deployment [deploymentNAME] state=[lableNAME] #Makes lable on depoyment [deploymentNAME] with lable name [lableNAME] 
 kubectl rollout history deployment [deploymentNAME] #Gives information about deployments revision
 kubectl rollout history deployment [deploymentNAME] --revision=[desiredREVISION] #Rollbacks to [desiredREVISION] of deployment [deploymentNAME]
+kubectl create cm [configmapNAME] --from-file [fileNAME] #Creates Configmap from file
