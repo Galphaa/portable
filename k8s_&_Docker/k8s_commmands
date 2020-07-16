@@ -2,14 +2,15 @@
 k8s Quick Start/Useful Commands
 ***********************************
 
-kubectl creat -f [NAME.yml] #Creates pod with give parameters from file [NAME.yml] 
+kubectl creat -f [fileNAME.yml] #Creates pod with give parameters from [fileNAME.yml] 
 kubectl create ns [namespaceNAME] #Creates namespaces
-kubectl get pods  #Gives pods brife information
+kubectl get pods  #Gives pods brife information default namespace
+kubectl get pods -A #Gives pods brife information about all namespaces
 kubectl get pods [podNAME] #Gives pods with name brife information about it
 kubectl get ns #Shows all namespaces 
 kubectl get ns [namespaceNAME] #Gives brife info of namespace [namespaceNAME]
 kubectl get ns [namespaceNAME] -o yaml #Gives all properties of namespace [namespaceNAME] in yaml format
-kubectl get all #Prints out all information 
+kubectl get all #Prints out all information default namespace
 kubectl describe {deployment|rs|pods} #Gives information about all pods,rs and deployment on host
 kubectl describe [podNAME] #Gives information about [podNAME] pod on host
 kubectl describe deployment [deploymentNAME] #Gives information about [deploymentNAME] deployment	 on host
@@ -26,3 +27,5 @@ kubectl label deployment [deploymentNAME] state=[lableNAME] #Makes lable on depo
 kubectl rollout history deployment [deploymentNAME] #Gives information about deployments revision
 kubectl rollout history deployment [deploymentNAME] --revision=[desiredREVISION] #Rollbacks to [desiredREVISION] of deployment [deploymentNAME]
 kubectl create cm [configmapNAME] --from-file [fileNAME] #Creates Configmap from file
+kubectl explain pod --recursive #Prints out the options which could be used for creating yaml file. Get the list of resourses all fields and sub-fields
+kubectl create  --namespace=[namespaceNAME] [resourseTYPE] [resourseNAME]
