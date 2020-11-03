@@ -11,6 +11,10 @@ kubectl get ns #Shows all namespaces
 kubectl get ns [namespaceNAME] #Gives brife info of namespace [namespaceNAME]
 kubectl get ns [namespaceNAME] -o yaml #Gives all properties of namespace [namespaceNAME] in yaml format
 kubectl get all #Prints out all information default namespace
+kubectl get deployments [deploymentNAME] --show-lables #Shows labels which are set on [deploymentNAME]
+kubectl get deployments --selector [lableNAME] #Prints out all deployments which has lable [lableNAME]
+kubectl get all --selector [lableNAME] #Prints out everything {pod,deployment,service...} which has lable [lableNAME]
+kubectl get pod -l [lableNAME]=[lableVALUE],[lableNAME1]=[lableVALUE1],[lableNAME2]=[lableVALUE2] #This print pods with multiple lables in this example it will print pods of this three lables {lableNAME,lableNAME2,lableNAME2}
 kubectl describe {deployment|rs|pods} #Gives information about all pods,rs and deployment on host
 kubectl describe [podNAME] #Gives information about [podNAME] pod on host
 kubectl describe deployment [deploymentNAME] #Gives information about [deploymentNAME] deployment	 on host
@@ -28,4 +32,4 @@ kubectl rollout history deployment [deploymentNAME] #Gives information about dep
 kubectl rollout history deployment [deploymentNAME] --revision=[desiredREVISION] #Rollbacks to [desiredREVISION] of deployment [deploymentNAME]
 kubectl create cm [configmapNAME] --from-file [fileNAME] #Creates Configmap from file
 kubectl explain pod --recursive #Prints out the options which could be used for creating yaml file. Get the list of resourses all fields and sub-fields
-kubectl create  --namespace=[namespaceNAME] [resourseTYPE] [resourseNAME]
+kubectl create  --namespace=[namespaceNAME] [resourseTYPE] [resourseNAME] #Creates [resourceTYPE] and places it in defined namespace [namespaceNAME]
