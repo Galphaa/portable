@@ -1,7 +1,7 @@
 ***********************************
 k8s Quick Start/Useful Commands
 ***********************************
-
+kubectl run [podNAME] --image=[imageNAME] --restart=Never  --rm --command -it -- env #Creates pod with name [podNAME], image used is [imageNAME], when comman is executed it will not restart, will remove after complition, --command allows to pass command for execution, will output stdout, passed command.
 kubectl creat -f [fileNAME.yml] #Creates pod with give parameters from [fileNAME.yml] 
 kubectl create ns [namespaceNAME] #Creates namespaces
 kubectl get pods  #Gives pods brife information default namespace
