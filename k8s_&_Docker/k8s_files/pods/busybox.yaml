@@ -1,13 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-busybox44
+  name: 'custom scheduler pod busybox44'
   namespace: default
-  labels:
-    app: busybox
 spec:
   containers:
-  - name: busy
+  - name: 'custom scheduler pod busybox44'
     image: busybox
     command:
       - sleep

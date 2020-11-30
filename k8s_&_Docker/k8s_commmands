@@ -1,9 +1,10 @@
 ***********************************
 k8s Quick Start/Useful Commands
 ***********************************
-kubectl run [podNAME] --image=[imageNAME] --restart=Never  --rm --command -it -- env #Creates pod with name [podNAME], image used is [imageNAME], when comman is executed it will not restart, will remove after complition, --command allows to pass command for execution, will output stdout, passed command.
+kubectl run [podNAME] --image=[imageNAME] --restart=Never  --rm --command -it -- env #Creates pod with name [podNAME], image used is [imageNAME], when comman is executed it will not restart, will remove after complition, --command allows to pass command for execution, will output stdout, passed command
 kubectl creat -f [fileNAME.yml] #Creates pod with give parameters from [fileNAME.yml] 
 kubectl create ns [namespaceNAME] #Creates namespaces
+kubectl set image [resource]/[resourceNAME] [containerNAME]=[imageNAME] #Set new image in resource {pod deployment daemonset} without editing yaml 
 kubectl get pods  #Gives pods brife information default namespace
 kubectl get pods -A #Gives pods brife information about all namespaces
 kubectl get pods [podNAME] #Gives pods with name brife information about it
@@ -33,3 +34,8 @@ kubectl rollout history deployment [deploymentNAME] --revision=[desiredREVISION]
 kubectl create cm [configmapNAME] --from-file [fileNAME] #Creates Configmap from file
 kubectl explain pod --recursive #Prints out the options which could be used for creating yaml file. Get the list of resourses all fields and sub-fields
 kubectl create  --namespace=[namespaceNAME] [resourseTYPE] [resourseNAME] #Creates [resourceTYPE] and places it in defined namespace [namespaceNAME]
+kubectl logs [podNAME] #Prints [podNAME] container stdout 
+kubectl logs -p -c [containerNAME] [podNAME] #Return snapshot of previous terminated [containerNAME] container logs from pod [podNAME]
+kubectl logs -f -c [containerNAME] podNAME] #Begin streaming following the logs of the [containerNAME] container in pod [podNAME]
+kubectl logs [jobNAME]/[containerNAME] #Prints output of job [jobNAME] containers
+    kubectl exec -it [podNAME] -c [containerNAME] -- sh #In pod [podNAME] inside of it container [containerNAME] executes command sh passed after -- and is attached to interactive shell
