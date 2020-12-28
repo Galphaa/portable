@@ -38,4 +38,6 @@ kubectl logs [podNAME] #Prints [podNAME] container stdout
 kubectl logs -p -c [containerNAME] [podNAME] #Return snapshot of previous terminated [containerNAME] container logs from pod [podNAME]
 kubectl logs -f -c [containerNAME] podNAME] #Begin streaming following the logs of the [containerNAME] container in pod [podNAME]
 kubectl logs [jobNAME]/[containerNAME] #Prints output of job [jobNAME] containers
-    kubectl exec -it [podNAME] -c [containerNAME] -- sh #In pod [podNAME] inside of it container [containerNAME] executes command sh passed after -- and is attached to interactive shell
+kubectl exec -it [podNAME] -c [containerNAME] -- sh #In pod [podNAME] inside of it container [containerNAME] executes command sh passed after -- and is attached to interactive shell
+kubectl set resources [deploymentNAME/podNAME] -c=[containerNAME] --limits=cpu=200m --limits=memory=512Mi #Set CPU 200m and Memory 512m limit on deploymentNAME/podNAME with containerNAME
+kubectl get [resourceNAME] -o custom-columns=NAMESPACE:metadata.namespace,NAME:metadata.name #This parses [resourceNAME] json format, on all or specified and gives us two output in columns set in custom-columns option, first is NAMESPACE:metadata.namespace second NAME:metadata.name 
