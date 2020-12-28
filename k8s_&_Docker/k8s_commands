@@ -2,13 +2,13 @@
 k8s Quick Start/Useful Commands
 ***********************************
 kubectl run [podNAME] --image=[imageNAME] --restart=Never  --rm --command -it -- env #Creates pod with name [podNAME], image used is [imageNAME], when comman is executed it will not restart, will remove after complition, --command allows to pass command for execution, will output stdout, passed command
-kubectl creat -f [fileNAME.yml] #Creates pod with give parameters from [fileNAME.yml] 
+kubectl creat -f [fileNAME.yml] #Creates pod with give parameters from [fileNAME.yml]
 kubectl create ns [namespaceNAME] #Creates namespaces
-kubectl set image [resource]/[resourceNAME] [containerNAME]=[imageNAME] #Set new image in resource {pod deployment daemonset} without editing yaml 
+kubectl set image [resource]/[resourceNAME] [containerNAME]=[imageNAME] #Set new image in resource {pod deployment daemonset} without editing yaml
 kubectl get pods  #Gives pods brife information default namespace
 kubectl get pods -A #Gives pods brife information about all namespaces
 kubectl get pods [podNAME] #Gives pods with name brife information about it
-kubectl get ns #Shows all namespaces 
+kubectl get ns #Shows all namespaces
 kubectl get ns [namespaceNAME] #Gives brife info of namespace [namespaceNAME]
 kubectl get ns [namespaceNAME] -o yaml #Gives all properties of namespace [namespaceNAME] in yaml format
 kubectl get all #Prints out all information default namespace
@@ -18,27 +18,26 @@ kubectl get all --selector [lableNAME] #Prints out everything {pod,deployment,se
 kubectl get pod -l [lableNAME]=[lableVALUE],[lableNAME1]=[lableVALUE1],[lableNAME2]=[lableVALUE2] #This print pods with multiple lables in this example it will print pods of this three lables {lableNAME,lableNAME2,lableNAME2}
 kubectl describe {deployment|rs|pods} #Gives information about all pods,rs and deployment on host
 kubectl describe [podNAME] #Gives information about [podNAME] pod on host
-kubectl describe deployment [deploymentNAME] #Gives information about [deploymentNAME] deployment	 on host
-kubectl delete pod [podNAME] #Deletes type=pod and [podNAME] 
+kubectl describe deployment [deploymentNAME] #Gives information about [deploymentNAME] deployment        on host
+kubectl delete pod [podNAME] #Deletes type=pod and [podNAME]
 kubectl run [NAME_DEPLOYMENT] --image=[imageNAME] #Creates deployment from nginx image with name of [s
-kubectl get rs [replicasetNAME] -o yaml #This gives full information about replica 
+kubectl get rs [replicasetNAME] -o yaml #This gives full information about replica
 kubectl logs [podNAME] #Gives log information about [podNAME] pod on host
-kubectl scale --replicas=3 deployment [deploymentNAME] #This increas number of pods in deployment and replicasets 
-kubectl create deployment --dry-run --image=[imageNAME] --output=yaml [deploymentNAME] > [NAME.yml] #Creates deployment yaml file to work with using image [imageNAME] and setting deployment name [deploymentNAME] 
+kubectl scale --replicas=3 deployment [deploymentNAME] #This increas number of pods in deployment and replicasets
+kubectl create deployment --dry-run --image=[imageNAME] --output=yaml [deploymentNAME] > [NAME.yml] #Creates deployment yaml file to work with using image [imageNAME] and setting deployment name [deploymentNAME]
 kubectl get deployment [deploymentNAME]  -o yaml #Gives output of [deploymentNAME] configuration in yaml format
 kubectl edit deployment [deploymentNAME] #Editing deployment yaml format, after quiting editor the changes are executing
 kubectl get deployment --show-labels #Outputs all deployments with there lableso
-kubectl label deployment [deploymentNAME] state=[lableNAME] #Makes lable on depoyment [deploymentNAME] with lable name [lableNAME] 
+kubectl label deployment [deploymentNAME] state=[lableNAME] #Makes lable on depoyment [deploymentNAME] with lable name [lableNAME]
 kubectl rollout history deployment [deploymentNAME] #Gives information about deployments revision
 kubectl rollout history deployment [deploymentNAME] --revision=[desiredREVISION] #Rollbacks to [desiredREVISION] of deployment [deploymentNAME]
 kubectl create cm [configmapNAME] --from-file [fileNAME] #Creates Configmap from file
 kubectl explain pod --recursive #Prints out the options which could be used for creating yaml file. Get the list of resourses all fields and sub-fields
 kubectl create  --namespace=[namespaceNAME] [resourseTYPE] [resourseNAME] #Creates [resourceTYPE] and places it in defined namespace [namespaceNAME]
-kubectl logs [podNAME] #Prints [podNAME] container stdout 
+kubectl logs [podNAME] #Prints [podNAME] container stdout
 kubectl logs -p -c [containerNAME] [podNAME] #Return snapshot of previous terminated [containerNAME] container logs from pod [podNAME]
 kubectl logs -f -c [containerNAME] podNAME] #Begin streaming following the logs of the [containerNAME] container in pod [podNAME]
 kubectl logs [jobNAME]/[containerNAME] #Prints output of job [jobNAME] containers
 kubectl exec -it [podNAME] -c [containerNAME] -- sh #In pod [podNAME] inside of it container [containerNAME] executes command sh passed after -- and is attached to interactive shell
-<<<<<<< HEAD
 kubectl set resources [deploymentNAME/podNAME] -c=[containerNAME] --limits=cpu=200m --limits=memory=512Mi #Set CPU 200m and Memory 512m limit on deploymentNAME/podNAME with containerNAME
-kubectl get [resourceNAME] -o custom-columns=NAMESPACE:metadata.namespace,NAME:metadata.name #This parses [resourceNAME] json format, on all or specified and gives us two output in columns set in custom-columns option, first is NAMESPACE:metadata.namespace second NAME:metadata.name 
+kubectl get [resourceNAME] -o custom-columns=NAMESPACE:metadata.namespace,NAME:metadata.name #This parses [resourceNAME] json format, on all or specified and gives us two output in columns set in custom-columns option, first is NAMESPACE:metadata.namespace second NAME:metadata.name
