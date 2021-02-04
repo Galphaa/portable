@@ -58,7 +58,7 @@ docker version    #give information about underling  components: go version git 
 docker inspect [containerNAME]
 docker ps -a -q --filter "status=exited"    #shows all exeted containersID
 docker top [conteinerID]    #shows given conteinersID top  
-docker diff [conteinerID]    #shows changes sinces docker conteiners from image 
+docker diff [conteinerID]    #shows changes sinces docker conteiners started from image 
 docker event    #shows live logging interaction what is happaning under docker hood similar to messages log file in linux 
 
 
