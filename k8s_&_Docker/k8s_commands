@@ -32,6 +32,7 @@ kubectl label deployment [deploymentNAME] state=[lableNAME] #Makes lable on depo
 kubectl rollout history deployment [deploymentNAME] #Gives information about deployments revision
 kubectl rollout history deployment [deploymentNAME] --revision=[desiredREVISION] #Rollbacks to [desiredREVISION] of deployment [deploymentNAME]
 kubectl create cm [configmapNAME] --from-file [fileNAME] #Creates Configmap from file
+kubectl run [podNAME] --image=[imageNAME] --dry-run=client -o yaml --restart=Never -- /bin/sh -c "while true; do echo hello; echo hello again;done" > [fileNAME.yaml]
 kubectl explain pod --recursive #Prints out the options which could be used for creating yaml file. Get the list of resourses all fields and sub-fields
 kubectl create  --namespace=[namespaceNAME] [resourseTYPE] [resourseNAME] #Creates [resourceTYPE] and places it in defined namespace [namespaceNAME]
 kubectl logs [podNAME] #Prints [podNAME] container stdout
