@@ -43,3 +43,13 @@ kubectl exec -it [podNAME] -c [containerNAME] -- sh #In pod [podNAME] inside of 
 kubectl set resources [deploymentNAME/podNAME] -c=[containerNAME] --limits=cpu=200m --limits=memory=512Mi #Set CPU 200m and Memory 512m limit on deploymentNAME/podNAME with containerNAME
 kubectl get [resourceNAME] -o custom-columns=NAMESPACE:metadata.namespace,NAME:metadata.name #This parses [resourceNAME] json format, on all or specified and gives us two output in columns set in custom-columns option, first is NAMESPACE:metadata.namespace second NAME:metadata.name
 kubectl run [podNAME] --image=[imageNAME] --port=[portNUMBER] --expose #Expose pod with 80 port and create correct service with cluster IP for this pod.
+
+
+***********************************
+            VIM SETUP
+***********************************
+set smarttab
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set number
