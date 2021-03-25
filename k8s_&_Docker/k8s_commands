@@ -1,4 +1,12 @@
 ***********************************
+            VIM SETUP
+***********************************
+set smarttab
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set number
+***********************************
 k8s Quick Start/Useful Commands
 ***********************************
 kubectl run [podNAME] --image=[imageNAME] --restart=Never  --rm --command -it -- env #Creates pod with name [podNAME], image used is [imageNAME], when comman is executed it will not restart, will remove after complition, --command allows to pass command for execution, will output stdout, passed command
@@ -45,11 +53,3 @@ kubectl get [resourceNAME] -o custom-columns=NAMESPACE:metadata.namespace,NAME:m
 kubectl run [podNAME] --image=[imageNAME] --port=[portNUMBER] --expose #Expose pod with 80 port and create correct service with cluster IP for this pod.
 
 
-***********************************
-            VIM SETUP
-***********************************
-set smarttab
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set number
