@@ -55,3 +55,4 @@ kubectl get [podNAME] -l 'env in (dev,prod)' #Get the pods with labels env=dev a
 kubectl label [podNAME] nginx-dev{1..3} app=nginx #label app=nginx for all the pods named nginx-dev1 nginx-dev2 nginx-dev3 in range  of 3 
 kubeadm token create --print-join-command #Pring command for nodes to join cluster
 cat fileNAME | base64 -w 0 #Will remove newlines 
+echo "CERT" | base64 -d | openssl x509 -text #Output the values from Certifivate in human readable format 
