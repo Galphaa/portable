@@ -57,3 +57,4 @@ kubeadm token create --print-join-command #Pring command for nodes to join clust
 cat fileNAME | base64 -w 0 #Will remove newlines 
 echo "CERT" | base64 -d | openssl x509 -text #Output the values from Certifivate in human readable format 
 cat [manifestNAME.yaml] | k get -f - #This will output list of all files which where mentioned in [manifestNAME.yaml] file
+kubectl exec -it -n kube-system kube-apiserver-controlplane -- kube-apiserver -h | grep -i enable-admission-plugins ##This commands shows us the current enabled admission controllers
