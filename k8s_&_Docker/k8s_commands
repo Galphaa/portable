@@ -58,3 +58,4 @@ cat fileNAME | base64 -w 0 #Will remove newlines
 echo "CERT" | base64 -d | openssl x509 -text #Output the values from Certifivate in human readable format 
 cat [manifestNAME.yaml] | k get -f - #This will output list of all files which where mentioned in [manifestNAME.yaml] file
 kubectl exec -it -n kube-system kube-apiserver-controlplane -- kube-apiserver -h | grep -i enable-admission-plugins ##This commands shows us the current enabled admission controllers
+kubectl delete pod protmerheus-k8s-{0,1} ##This command will delete pod with name protmerheus-k8s-0 and protmerheus-k8s-1
